@@ -1,0 +1,104 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+@font-face {
+font-family: $font_name;
+font-display: swap;
+src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+font-weight: #{$weight};
+font-style: #{$style};
+}
+}
+@import "fonts";
+
+// === Fonts ===
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+// === / Fonts ===
+// === Mixin ===
+@mixin montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin roboto {
+    font-family: 'Roboto', sans-serif;
+}
+// === / Mixin ===
+// === Variables ===
+$black: #070707;
+$grey: #828282;
+// === / Variables ===
+// === Common ===
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.container {
+    width: 100vw;
+}
+
+.wrapper {
+    width: auto;
+    padding-top: 30px;
+    margin: 0 250px;
+}
+// === / Common ===
+// main page
+.navigation {
+    
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    &__link {
+        color: $grey;
+        text-decoration: none;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.line {
+    width: auto;
+    height: 0;
+    margin-top: 30px;
+    color: $black;
+    border: 1px solid #828282;
+}
+
+.info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 40px;
+    color: $black;
+}
+
+.name {
+    font-size: 47px;
+}
+
+.lang {
+    font-size: 16px;
+    transform: rotate(-90deg) translateX(28px) translateY(24px);
+
+    & span {
+        color: $grey;
+    }
+}
+
+.photo {
+    margin-top: 30px;
+    // transform: scale(1.223) translateX(87px) translateY(24px);
+}
+// main page
