@@ -1,13 +1,14 @@
 @mixin font($font_name, $file_name, $weight, $style) {
 
 @font-face {
-font-family: $font_name;
-font-display: swap;
-src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
-font-weight: #{$weight};
-font-style: #{$style};
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
 }
 }
+
 @import "fonts";
 
 // === Fonts ===
@@ -26,6 +27,7 @@ font-style: #{$style};
 // === Variables ===
 $black: #070707;
 $grey: #828282;
+$light: #F6F6F6;
 // === / Variables ===
 // === Common ===
 body {
@@ -36,20 +38,32 @@ body {
 }
 
 .container {
-    width: 100vw;
+    max-width: 100vw;
+
+    &_full {
+        height: 100vh;
+        padding-top: 30px;
+    }
+
+    &_light {
+        height: 500px;
+        background-color: $light;
+    }
 }
 
 .wrapper {
-    width: auto;
-    padding-top: 30px;
     margin: 0 250px;
-}
-// === / Common ===
-// main page
-.navigation {
-    
+
+    &_column {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+    }
 }
 
+// === / Common ===
+// main page
 .list {
     display: flex;
     align-items: center;
@@ -86,6 +100,7 @@ body {
 
 .name {
     font-size: 47px;
+    line-height: 59px;
 }
 
 .lang {
@@ -98,7 +113,56 @@ body {
 }
 
 .photo {
-    margin-top: 30px;
+    width: 100%;
+    margin-top: 50px;
     // transform: scale(1.223) translateX(87px) translateY(24px);
 }
 // main page
+// information
+.header {
+    margin-top: 80px;
+    font-size: 34px;
+    line-height: 42px;
+    color: $black;
+}
+
+.text {
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 22px;
+}
+// information
+//skills
+.showcase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 80px;
+
+    &__program {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
+
+        & img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    &__text {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+    }
+}
+//skills
