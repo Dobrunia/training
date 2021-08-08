@@ -1,2 +1,23 @@
-@include font("Gilroy-Bold", "Gilroy-Bold", "400", "normal");
-@include font("Gilroy-Medium", "Gilroy-Medium", "400", "normal");
+@font-face {
+    font-family: "Gilroy";
+    font-display: swap;
+    src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-display: swap;
+    src: url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    font-display: swap;
+    src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
+}

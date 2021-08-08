@@ -1,29 +1,5 @@
-@mixin font($font_name, $file_name, $weight, $style) {
-
-@font-face {
-    font-family: $font_name;
-    font-display: swap;
-    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
-    font-weight: #{$weight};
-    font-style: #{$style};
-}
-}
-
 @import "fonts";
 
-// === Fonts ===
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-// === / Fonts ===
-// === Mixin ===
-@mixin montserrat {
-    font-family: 'Montserrat', sans-serif;
-}
-
-@mixin roboto {
-    font-family: 'Roboto', sans-serif;
-}
-// === / Mixin ===
 // === Variables ===
 $black: #070707;
 $grey: #828282;
@@ -34,7 +10,10 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Gilroy";
     font-size: 18px;
+    font-weight: 700;
+    color: $black;
 }
 
 .container {
@@ -45,23 +24,32 @@ body {
         padding-top: 30px;
     }
 
-    &_light {
+    &_small {
         height: 500px;
+    }
+
+    &_light {
         background-color: $light;
     }
 }
 
 .wrapper {
-    margin: 0 250px;
+    max-width: 1000px;
+    margin: 0 auto;
 
     &_column {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
+        padding-bottom: 100px;
         text-align: center;
     }
 }
 
+.pointer:hover {
+    cursor: pointer;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
 // === / Common ===
 // main page
 .list {
@@ -82,11 +70,14 @@ body {
     }
 }
 
+.burder {
+    display: none;
+}
+
 .line {
     width: auto;
     height: 0;
     margin-top: 30px;
-    color: $black;
     border: 1px solid #828282;
 }
 
@@ -95,7 +86,6 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     margin-top: 40px;
-    color: $black;
 }
 
 .name {
@@ -117,19 +107,32 @@ body {
     margin-top: 50px;
     // transform: scale(1.223) translateX(87px) translateY(24px);
 }
+
+.photo_mobile {
+    display: none;
+}
 // main page
 // information
 .header {
-    margin-top: 80px;
+    padding-top: 80px;
+    margin: 0;
     font-size: 34px;
     line-height: 42px;
-    color: $black;
 }
 
 .text {
     margin-top: 50px;
     font-size: 18px;
+    font-weight: 500;
     line-height: 22px;
+
+    &_underline {
+        text-decoration: underline;
+    }
+
+    & a {
+        color: $black;
+    }
 }
 // information
 //skills
@@ -150,7 +153,7 @@ body {
     &__icon {
         width: 80px;
         height: 80px;
-        background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
+        background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002c 100%);
 
         & img {
             width: 80px;
@@ -158,11 +161,204 @@ body {
         }
     }
 
+    &__figma {
+        width: 58px;
+        height: 89px;
+
+        & img {
+            width: 58px;
+            height: 89px;
+        }
+    }
+
     &__text {
         margin-top: 20px;
         font-size: 14px;
         line-height: 17px;
+        color: $grey;
         text-align: center;
+    }
+
+    &__rating {
+        margin-top: 40px;
+
+        & img {
+            padding-left: 10px;
+        }
     }
 }
 //skills
+//contacts
+.btn {
+    width: 180px;
+    padding: 10px 0;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-color: $black;
+    border-radius: 20px;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.small_text {
+    margin-top: 55px;
+    font-weight: 500;
+    color: $grey;
+}
+//contacts
+//media
+@media (max-width: 912px) {
+    .display-none {
+        display: none;
+    }
+
+    .overflow {
+        overflow: hidden;
+    }
+
+    .wrapper {
+        margin: 0 25px;
+    }
+
+    .move {
+        left: 0 !important;
+    }
+
+    .move2 {
+        right: 0 !important;
+        display: block !important;
+    }
+
+    .list {//TODO: запретить скролл
+        position: absolute;
+        top: 0;
+        left: -100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100vh;
+        font-size: 34px;
+        background-color: #fff;
+        transition: all .3s ease 0s;
+
+        &__item {
+            margin-top: 65px;
+            margin-left: 25px;
+        }
+    }
+
+    .burder {
+        position: relative;
+        right: -90%;
+        z-index: 5;
+        display: block;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .burder span,
+    .burder::before,
+    .burder::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 12%;
+        background-color: #000;
+        transition: all .3s ease 0s;
+    }
+
+    .burder::before,
+    .burder::after {
+        content: "";
+    }
+
+    .burder::before {
+        top: 0;
+    }
+
+    .burder::after {
+        bottom: 0;
+    }
+
+    .burder span {
+        top: 50%;
+        transform: scale(1) translate(0, -50%);
+    }
+
+    .exit span {
+        background-color: #828282;
+        transform: scale(0) translate(0, -50%);
+    }
+
+    .exit.burder::before {
+        top: 50%;
+        background-color: #828282;
+        transform: rotate(-45deg) translate(0, -50%);
+    }
+
+    .exit.burder::after {
+        bottom: 50%;
+        background-color: #828282;
+        transform: rotate(45deg) translate(0, 50%);
+    }
+
+    .line {
+        display: none;
+    }
+
+    .info {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+
+    .name {
+        margin-bottom: 20px;
+    }
+
+    .lang {
+        position: absolute;
+        right: -100%;
+        bottom: 150px;
+        display: none;
+        font-size: 34px;
+        line-height: 42px;
+        transition: all .3s ease 0s;
+        transform: rotate(90deg) translateX(28px) translateY(24px);
+    }
+
+    .photo_mobile {
+        display: block;
+        margin-top: 35px;
+    }
+
+    .showcase {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-top: 0;
+
+        &__program {
+            margin-top: 80px;
+        }
+
+        // &:last-child {//TODO: не работает
+        //     margin-bottom: 0;
+        // }
+    }
+
+    .btn {
+        width: 315px;
+    }
+}
+//media
+//Portfolio ul li

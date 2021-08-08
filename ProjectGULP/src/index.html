@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.min.css" rel="stylesheet" type="text/css">
+    <title>DenisNovik</title>
+    <link href="./css/style.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body id="body">
     <!-- main page -->
-    <div class="container container_full">
+    <section class="container container_full">
         <div class="wrapper">
             <nav>
-                <ul class="list">
+                <ul id="list" class="list">
                     <li class="list__item"><a class="list__link" href="">Home</a></li>
                     <li class="list__item"><a class="list__link" href="">About me</a></li>
                     <li class="list__item"><a class="list__link" href="">Skills</a></li>
@@ -22,86 +22,112 @@
                     <li class="list__item"><a class="list__link" href="">Contacts</a></li>
                 </ul>
             </nav>
+            <div id="burder" class="burder"><span></span></div>
             <div class="line"></div>
             <div class="info">
                 <div class="name">Denis<br>Novik</div>
-                <div>UX | UI designer<br>24 years old, Minsk</div>
-                <div class="lang"><span>RU</span> | ENG</div>
+                <div class="fw-medium">UX | UI designer<br>24 years old, Minsk</div>
+                <div id="lang" class="lang"><span>RU</span> | ENG</div>
             </div>
-            <img class="photo" src="./img/BSPP2266.png" alt="">
+            <div><img class="photo display-none" src="./img/BSPP2266.png" alt=""></div>
+            <div><img class="photo_mobile" src="./img/ffgfg.png" alt=""></div>
         </div>
-    </div>
+    </section>
     <!-- main page -->
     <!-- information -->
-    <div class="container container_light">
+    <section class="container container_light">
         <div class="wrapper wrapper_column">
-            <div class="header">About me</div>
+            <h2 class="header">About me</h2>
             <div class="text">Hi, I'm Denis – UX/UI designer from Minsk. <br> I'm interested in design and everything connected with it.</div>
             <div class="text">I'm studying at courses "Web and mobile design <br> interfaces" in IT-Academy.</div>
             <div class="text">Ready to implement excellent projects <br> with wonderful people.</div>
         </div>
-    </div>
+    </section>
     <!-- information -->
     <!-- skills -->
-    <div class="container">
+    <section class="container">
         <div class="wrapper wrapper_column">
-            <div class="header">Skills</div>
+            <h2 class="header">Skills</h2>
             <div class="text">I work in such programs as</div>
             <div class="showcase">
                 <div class="showcase__program">
                     <div class="showcase__icon"><img src="./img/Ps.png" alt=""></div>
                     <div class="showcase__text">Adobe<br>Photoshop</div>
-                    <div class="showcase__rating"></div>
+                    <div class="showcase__rating">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarE.png" alt="">
+                    </div>
                 </div>
                 <div class="showcase__program">
                     <div class="showcase__icon"><img src="./img/Ai.png" alt=""></div>
                     <div class="showcase__text">Adobe<br>Illustrator</div>
-                    <div class="showcase__rating"></div>
+                    <div class="showcase__rating">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarE.png" alt="">
+                        <img src="./img/StarE.png" alt="">
+                    </div>
                 </div>
                 <div class="showcase__program">
                     <div class="showcase__icon"><img src="./img/Ae.png" alt=""></div>
                     <div class="showcase__text">Adobe<br>After Effects</div>
-                    <div class="showcase__rating"></div>
+                    <div class="showcase__rating">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarE.png" alt="">
+                    </div>
                 </div>
                 <div class="showcase__program">
-                    <div class="showcase__icon"></div>
+                    <div class="showcase__figma"><img src="./img/figma.png" alt=""></div>
                     <div class="showcase__text">Figma</div>
-                    <div class="showcase__rating"></div>
+                    <div class="showcase__rating">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarB.png" alt="">
+                        <img src="./img/StarE.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- skills -->
     <!-- portfolio -->
-    <div class="container">
-        <div class="wrapper">
-            <div class="header"></div>
-            <!---->
-            <div></div>
-            <!---->
-            <div></div>
-            <!---->
-            <div></div>
+    <section class="container container_light">
+        <div class="wrapper wrapper_column">
+            <h2 class="header">Portfolio</h2>
+            <img class="photo" src="./img/1.png" alt="">
+            <div class="text text_underline"><a href="">Online fashion store - Homepage</a></div>
+            <img class="photo" src="./img/2.png" alt="">
+            <div class="text text_underline"><a href="">Reebok Store - Concept</a></div>
+            <img class="photo" src="./img/3.png" alt="">
+            <div class="text text_underline"><a href="">Braun Landing Page - Concept</a></div>
         </div>
-    </div>
+    </section>
     <!-- portfolio -->
     <!-- contacts -->
-    <div class="container">
-        <div class="wrapper">
-            <div class="header"></div>
-            <div></div>
-            <div class="btn"></div>
+    <section class="container">
+        <div class="wrapper wrapper_column">
+            <h2 class="header">Contacts</h2>
+            <div class="text">Want to know more or just chat?<br>You are welcome!</div>
+            <button class="btn">Send message</button>
             <div class="social-media">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <a href=""><img src="./img/in.png" alt=""></a>
+                <a href=""><img src="./img/instpng.png" alt=""></a>
+                <a href=""><img src="./img/behance.png" alt=""></a>
+                <a href=""><img src="./img/dri.png" alt=""></a>
             </div>
-            <div></div>
+            <div class="small_text">Like me on<br>LinkedIn, Instagram, Behance, Dribble</div>
         </div>
-    </div>
+    </section>
     <!-- contacts -->
-    <script src="js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
 </body>
 
 </html>

@@ -16,3 +16,15 @@ document.querySelector('body').classList.add('webp');
 document.querySelector('body').classList.add('no-webp');
 }
 });
+
+let burger = document.getElementById('burder'),
+    list = document.getElementById('list'),
+    lang = document.getElementById('lang'),
+    body = document.getElementById('body');
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('exit');
+    list.classList.toggle('move');
+    lang.classList.toggle('move2');
+    body.classList.toggle('overflow');
+})
